@@ -13,7 +13,7 @@ server.use('/api', apiRouter);
 server.get('/', async (req, res)=> {
     try{
         const shouts = await db('shouts');
-        res.status(200).json(`The message of the day is: ${process.env.MOTD}`, shouts)
+        res.status(200).json({messageOfTheDay: process.env.MOTD, shouts})
     }
     catch(error){
         console.log(error);
