@@ -9,7 +9,7 @@ const server = express();
 server.use(helmet());
 
 server.get('/', function (req, res){
-   res.status(200).json({messageOfTheDay: process.env.MOTD})
+   res.status(200).json({messageOfTheDay: process.env.MOTD, port:process.env.PORT})
 })
 
 server.use('/api', apiRouter);
